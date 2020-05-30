@@ -13,5 +13,7 @@ echo "done!"
 echo "stage3: do compiler"
 cd dist
 echo '#include"tree.h"\n' | cat - y.tab.hpp > y.tab.hpp.temp && rm y.tab.hpp && mv y.tab.hpp.temp y.tab.hpp
-g++ -std=c++11 -o compiler tree.cpp scanner.lex.yy.cpp y.tab.cpp
+
+alias g++='g++ -std=c++11'
+g++ tree.cpp scanner.lex.yy.cpp y.tab.cpp -o compiler
 echo "done!"

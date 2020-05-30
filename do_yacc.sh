@@ -1,1 +1,1 @@
-yacc --output=dist/y.tab.cpp -d parse.y
+yacc --output=dist/y.tab.cpp -d parser.y

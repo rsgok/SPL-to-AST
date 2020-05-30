@@ -2,7 +2,11 @@
 
 #define _TOKEN_H_
 
-enum Token
+#include <string>
+#include <cstring>
+#include <map>
+
+enum class Token
 {
     undefined,
     LP,
@@ -77,7 +81,7 @@ enum Token
     var_part,
     routine_part,
     const_expr_list,
-    const_value,  
+    const_value,
     type_decl,
     type_decl_list,
     type_definition,
@@ -120,5 +124,12 @@ enum Token
     expr,
     term
 };
+
+// map of string-token
+extern std::map<std::string, Token> tokenMap;
+
+extern Token tokenResolver(std::string name);
+
+extern std::string stringResolver(Token token);
 
 #endif

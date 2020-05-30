@@ -10,29 +10,29 @@
 #include <iostream>
 #include <fstream>
 
-#include "token.h"
+// #include "token.h"
 
 extern char *yytext;
 extern int yyrow, yycol;
 
 using namespace std;
 
-// typedef int Token;
-
 class TreeNode
 {
 public:
-    Token name = undefined;
+    string name;
     string content = "";
+    // Token token_name = Token::undefined;
     int row = 0;
     int col = 0;
     TreeNode *first_child;
     TreeNode *next_sibling;
     TreeNode() = default;
-    TreeNode(Token name);
-    TreeNode(Token name, string content);
-    TreeNode(Token name, int num, ...);
+    TreeNode(string name);
+    TreeNode(string name, string content);
+    TreeNode(string name, int num, ...);
     void write_json(string path);
+    // Token tokenResolver(string name);
 
 private:
     void traverse(TreeNode *node, ofstream &outfile);
