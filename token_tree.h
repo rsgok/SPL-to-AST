@@ -30,4 +30,7 @@ public:
     TreeNode(Token name, int num, ...);
 };
 
+TreeNode *loadJson(string fileurl);
+TreeNode *buildTree(TreeNode *father);
+
 #endif

@@ -38,7 +38,6 @@ TreeNode::TreeNode(Token name, int num, ...) : TreeNode(name)
     cout << "--------end--------" << endl;
 }
 
-
 TreeNode *loadJson(string fileurl)
 {
     Json::Value root;
@@ -58,6 +57,11 @@ TreeNode *loadJson(string fileurl)
         cerr << "error" << endl;
         return NULL;
     }
+}
+
+TreeNode *buildTree(TreeNode *father)
+{
+
 }
 
 int main()

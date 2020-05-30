@@ -1,0 +1,1 @@
+./dist/compiler ./testcode/easy.p
