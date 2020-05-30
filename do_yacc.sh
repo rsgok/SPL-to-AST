@@ -1,0 +1,1 @@
+yacc --output=dist/y.tab.cpp -d parse.y
