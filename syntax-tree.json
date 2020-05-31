@@ -173,10 +173,110 @@
                                     },
                                     {
                                         "name": "stmt_list",
-                                        "content": "stmt_list no member",
+                                        "content": "",
                                         "row": 3,
                                         "col": 6,
-                                        "children": []
+                                        "children": [
+                                            {
+                                                "name": "stmt_list",
+                                                "content": "stmt_list no member",
+                                                "row": 3,
+                                                "col": 6,
+                                                "children": []
+                                            },
+                                            {
+                                                "name": "stmt",
+                                                "content": "",
+                                                "row": 4,
+                                                "col": 1,
+                                                "children": [
+                                                    {
+                                                        "name": "non_label_stmt",
+                                                        "content": "",
+                                                        "row": 4,
+                                                        "col": 1,
+                                                        "children": [
+                                                            {
+                                                                "name": "assign_stmt",
+                                                                "content": "",
+                                                                "row": 4,
+                                                                "col": 1,
+                                                                "children": [
+                                                                    {
+                                                                        "name": "ID",
+                                                                        "content": "va",
+                                                                        "row": 4,
+                                                                        "col": 1,
+                                                                        "children": []
+                                                                    },
+                                                                    {
+                                                                        "name": "ASSIGN",
+                                                                        "content": ":=",
+                                                                        "row": 4,
+                                                                        "col": 3,
+                                                                        "children": []
+                                                                    },
+                                                                    {
+                                                                        "name": "expression",
+                                                                        "content": "",
+                                                                        "row": 4,
+                                                                        "col": 5,
+                                                                        "children": [
+                                                                            {
+                                                                                "name": "expr",
+                                                                                "content": "",
+                                                                                "row": 4,
+                                                                                "col": 5,
+                                                                                "children": [
+                                                                                    {
+                                                                                        "name": "term",
+                                                                                        "content": "",
+                                                                                        "row": 4,
+                                                                                        "col": 5,
+                                                                                        "children": [
+                                                                                            {
+                                                                                                "name": "factor",
+                                                                                                "content": "",
+                                                                                                "row": 4,
+                                                                                                "col": 5,
+                                                                                                "children": [
+                                                                                                    {
+                                                                                                        "name": "const_value",
+                                                                                                        "content": "",
+                                                                                                        "row": 4,
+                                                                                                        "col": 5,
+                                                                                                        "children": [
+                                                                                                            {
+                                                                                                                "name": "INTEGER",
+                                                                                                                "content": "1",
+                                                                                                                "row": 4,
+                                                                                                                "col": 5,
+                                                                                                                "children": []
+                                                                                                            }
+                                                                                                        ]
+                                                                                                    }
+                                                                                                ]
+                                                                                            }
+                                                                                        ]
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "name": "SEMI",
+                                                "content": ";",
+                                                "row": 4,
+                                                "col": 6,
+                                                "children": []
+                                            }
+                                        ]
                                     },
                                     {
                                         "name": "END",

@@ -81,7 +81,16 @@ void printTree(TreeNode *father, int level)
     {
         cout << " ";
     }
-    cout << "-- " << stringResolver(father->name) << endl;
+    string namestr = stringResolver(father->name);
+    cout << "-- " << namestr;
+    if (namestr=="INTEGER" || namestr=="REAL" || namestr=="CHAR" || namestr=="STRING")
+    {
+        cout << ": " << father->content << endl;
+    }
+    else
+    {
+        cout << endl;
+    }
     printTree(father->first_child, level + 1);
     printTree(father->next_sibling, level);
 }
