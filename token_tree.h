@@ -27,10 +27,10 @@ public:
     TreeNode() = default;
     TreeNode(Token name);
     TreeNode(Token name, string content);
-    TreeNode(Token name, int num, ...);
 };
 
 TreeNode *loadJson(string fileurl);
-TreeNode *buildTree(TreeNode *father);
+void buildTree(TreeNode *father, Json::Value data);
+void printTree(TreeNode *father, int level);
 
 #endif

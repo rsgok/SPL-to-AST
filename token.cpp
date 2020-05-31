@@ -62,6 +62,7 @@ std::map<std::string, Token> tokenMap = {
     {"WHILE", Token::WHILE},
     {"READ", Token::READ},
     {"NAME", Token::NAME},
+    {"program", Token::program},
     {"program_head", Token::program_head},
     {"routine", Token::routine},
     {"routine_head", Token::routine_head},
@@ -128,10 +129,13 @@ Token tokenResolver(std::string name)
 std::string stringResolver(Token token) {
     std::map<std::string, Token>::iterator iter;
     iter = tokenMap.begin();
-    while(iter != tokenMap.end()) {
+    while(iter != tokenMap.end()) 
+    {
+        // std::cout<< ">>> stringResolver: "<< iter->first << std::endl;
         if (iter->second == token) {
             return iter->first;
         }
+        iter++;
     }
-    return NULL;
+    return "";
 }
