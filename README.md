@@ -12,10 +12,17 @@ sh ./gen_compiler.sh
 ./dist/compiler testcode/easy.p
 # it will build syntax-tree.json in root directory
 
-# then run cpp program to view syntax tree
+# then run cpp program to view syntax tree (bash view)
 ./token_tree
-```
 
+# and there is a better web view
+# remember to install jinjia2 firstly
+# python3 env (recommend the conda env)
+pip install jinjia2
+python generate_treemap.py
+
+# then open webTreeMap.html in browser
+```
 
 
 ### documentaion
@@ -41,3 +48,13 @@ repo文件目录解释
 - token.h：下一阶段程序需要引用的头文件，定义了token数据类型，以及关于token的转换函数
 - tree.cpp：本阶段使用的cpp文件
 - tree.h：本阶段使用的头文件，定义树结构，其中节点名数据类型为string
+
+
+### result
+
+web view token tree
+
+ (太长，未完全截图)
+
+![](http://qiniustorage.joyinn.top/20200601025210.png)
+

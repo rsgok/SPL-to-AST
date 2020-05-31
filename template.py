@@ -42,7 +42,7 @@ data = {{json_data}};
 data = data["data"];
 columns=[
 ]
-nodeSize=17
+nodeSize=30
 
 format = d3.format(",")
 let i = 0; 
@@ -52,7 +52,7 @@ const nodes = root.descendants();
   const svg = d3.create("svg")
       .attr("viewBox", [-nodeSize / 2, -nodeSize * 3 / 2, width, (nodes.length + 1) * nodeSize])
       .attr("font-family", "sans-serif")
-      .attr("font-size", 10)
+      .attr("font-size", 15)
       .style("overflow", "visible");
 
   const link = svg.append("g")
