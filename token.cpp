@@ -62,7 +62,6 @@ std::map<std::string, Token> tokenMap = {
     {"VAR", Token::VAR},
     {"WHILE", Token::WHILE},
     {"READ", Token::READ},
-    {"NAME", Token::NAME},
     {"program", Token::program},
     {"program_head", Token::program_head},
     {"routine", Token::routine},

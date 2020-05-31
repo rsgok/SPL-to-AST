@@ -52,22 +52,20 @@ void buildTree(TreeNode *father, Json::Value data)
             // first child
             // assign to their father
             father->first_child = newNode;
-            leftNode = newNode;
-        }
-        else if (i + 1 == children_size)
-        {
-            // the rightmost child
-            // assign next_sibling NULL
-            leftNode->next_sibling = newNode;
-            newNode->next_sibling = NULL;
         }
         else
         {
             // right child from the leftmost one
             // assign to their left closest one
             leftNode->next_sibling = newNode;
-            leftNode = newNode;
         }
+        leftNode = newNode;
+    }
+    if (leftNode != NULL)
+    {
+        // the rightmost child
+        // assign next_sibling NULL
+        leftNode->next_sibling = NULL;
     }
 }
 
