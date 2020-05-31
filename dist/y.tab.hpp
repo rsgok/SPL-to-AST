@@ -98,8 +98,7 @@
      VAR = 312,
      WHILE = 313,
      SYS_FUNCT = 314,
-     SYS_PROC = 315,
-     NAME = 316
+     SYS_PROC = 315
    };
 #endif
 /* Tokens.  */
@@ -161,7 +160,6 @@
 #define WHILE 313
 #define SYS_FUNCT 314
 #define SYS_PROC 315
-#define NAME 316
 
 
 
@@ -173,7 +171,7 @@ typedef union YYSTYPE
   TreeNode* node;
 }
 /* Line 1529 of yacc.c.  */
-#line 175 "dist/y.tab.hpp"
+#line 173 "dist/y.tab.hpp"
 	YYSTYPE;
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1

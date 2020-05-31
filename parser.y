@@ -33,7 +33,7 @@ int flag=0;
 %token <node> AND ARRAY ASSIGN SBEGIN CASE CHAR COLON COMMA CONST DIV DO SYS_CON PROCEDURE
 %token <node> DOT DOTDOT DOWNTO OR ELSE END EQUAL FOR FUNCTION GE GOTO GT ID PACKED
 %token <node> IF INTEGER LB LE LP LT MINUS MOD MUL NOT OF PLUS RB SYS_TYPE PROGRAM
-%token <node> READ REAL RECORD REPEAT RP SEMI STRING THEN TO TYPE UNEQUAL UNTIL VAR WHILE SYS_FUNCT SYS_PROC NAME
+%token <node> READ REAL RECORD REPEAT RP SEMI STRING THEN TO TYPE UNEQUAL UNTIL VAR WHILE SYS_FUNCT SYS_PROC
 
 %type <node> program program_head routine routine_head routine_body sub_routine const_part type_part var_part routine_part
 %type <node> const_expr_list const_value type_decl_list type_decl simple_type_decl array_type_decl type_definition record_type_decl field_decl_list
@@ -79,10 +79,10 @@ const_part:
     };
 
 const_expr_list:
-    const_expr_list NAME EQUAL const_value SEMI {
+    const_expr_list ID EQUAL const_value SEMI {
         $$=new TreeNode("const_expr_list",5,$1,$2,$3,$4,$5);
     }
-    | NAME EQUAL const_value SEMI {
+    | ID EQUAL const_value SEMI {
         $$=new TreeNode("const_expr_list",4,$1,$2,$3,$4);
     };
 
@@ -117,7 +117,7 @@ type_decl_list:
     };
 
 type_definition:
-    NAME EQUAL type_decl SEMI {
+    ID EQUAL type_decl SEMI {
         $$=new TreeNode("type_definition",4,$1,$2,$3,$4);
     };
 
@@ -136,7 +136,7 @@ simple_type_decl:
     SYS_TYPE {
         $$=new TreeNode("simple_type_decl", 1, $1);
     }
-    | NAME {
+    | ID {
         $$=new TreeNode("simple_type_decl", 1, $1);
     }
     | LP name_list RP {
@@ -151,7 +151,7 @@ simple_type_decl:
     | MINUS const_value DOTDOT MINUS const_value {
         $$=new TreeNode("simple_type_decl", 5, $1, $2, $3, $4, $5);
     }
-    | NAME DOTDOT NAME {
+    | ID DOTDOT ID {
         $$=new TreeNode("simple_type_decl", 3, $1, $2, $3);
     };
 
@@ -230,7 +230,7 @@ function_decl:
     };
 
 function_head:
-    FUNCTION NAME parameters COLON simple_type_decl {
+    FUNCTION ID parameters COLON simple_type_decl {
         $$=new TreeNode("function_head", 5, $1, $2, $3, $4, $5);
     };
 
@@ -240,7 +240,7 @@ procedure_decl:
     };
 
 procedure_head:
-    PROCEDURE NAME parameters {
+    PROCEDURE ID parameters {
         $$=new TreeNode("procedure_head", 3, $1, $2, $3);
     };
 
@@ -486,10 +486,10 @@ term:
     };
 
 factor:
-    NAME {
+    ID {
         $$=new TreeNode("factor", 1, $1);
     }
-    | NAME LP args_list RP {
+    | ID LP args_list RP {
         $$=new TreeNode("factor", 4, $1, $2, $3, $4);
     }
     | SYS_FUNCT {

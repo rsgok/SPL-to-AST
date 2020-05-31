@@ -1,11 +1,10 @@
 program hello;
 var a : integer;
 
-function A2(b1 : integer) : integer;
-var 
-	b : integer;
+function A2(var b1 : integer) : integer;
+var b : integer;
 
-function B2(b2 : integer) : integer;
+function B2(var b2 : integer) : integer;
 
 begin
 	a := 123;
@@ -19,9 +18,9 @@ begin
 end
 ;
 
-function A1(a1 : integer) : integer;
+function A1(var a1 : integer) : integer;
 
-	function B1(b2 : integer) : integer;
+	function B1(var b2 : integer) : integer;
 
 	begin
 		A2(3);

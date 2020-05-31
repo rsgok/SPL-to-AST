@@ -14,7 +14,7 @@ TreeNode::TreeNode(string name, string content) : TreeNode(name)
 
 TreeNode::TreeNode(string name, int num, ...) : TreeNode(name)
 {
-    cout << "TreeNode multi Node import:" << name << " " << num << endl;
+    cout << "\nTreeNode multi Node import:" << name << " " << num << endl;
     va_list valist;
     va_start(valist, num);
     if (num > 0)
