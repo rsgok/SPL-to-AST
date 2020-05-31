@@ -4,6 +4,7 @@
 
 #include <string>
 #include <cstring>
+#include <iostream>
 #include <map>
 
 enum class Token
@@ -70,6 +71,7 @@ enum class Token
     READ,
     NAME,
     // fake token
+    program,
     program_head,
     routine,
     routine_head,

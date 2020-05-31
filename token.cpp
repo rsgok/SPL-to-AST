@@ -2,6 +2,7 @@
 
 // map of string-token
 std::map<std::string, Token> tokenMap = {
+    {"undefined", Token::undefined},
     {"LP", Token::LP},
     {"RP", Token::RP},
     {"LB", Token::LB},

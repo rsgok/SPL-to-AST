@@ -82,8 +82,12 @@ void printTree(TreeNode *father, int level)
         cout << " ";
     }
     string namestr = stringResolver(father->name);
+    if (namestr == "undefined")
+    {
+        namestr = father->content;
+    }
     cout << "-- " << namestr;
-    if (namestr=="INTEGER" || namestr=="REAL" || namestr=="CHAR" || namestr=="STRING")
+    if (namestr == "INTEGER" || namestr == "REAL" || namestr == "CHAR" || namestr == "STRING")
     {
         cout << ": " << father->content << endl;
     }
