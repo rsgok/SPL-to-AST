@@ -54,6 +54,7 @@ boolean (true)|(false)
 "=" { proc_content("EQUAL", "="); return EQUAL;}
 ":=" { proc_content("ASSIGN", ":="); return ASSIGN;}
 "mod" { proc_content("MOD", "%"); return MOD;}
+"%" { proc_content("MOD", "%"); return MOD;}
 ".." { proc_content("DOTDOT", ".."); return DOTDOT;}
 ";" { proc_content("SEMI", ";"); return SEMI;}
 
