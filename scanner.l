@@ -19,8 +19,8 @@ digit [0-9]
 number {digit}+
 letter [a-zA-Z]
 id {letter}(_|{letter}|{digit})*
-integer [1-9]{digit}*
-real [1-9]{digit}*[.]{digit}+
+integer 0|([1-9]{digit}*)
+real 0|([1-9]{digit}*)[.]{digit}+
 string \'[^']*\'
 char \'[.]\'
 newline \n

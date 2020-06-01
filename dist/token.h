@@ -69,7 +69,6 @@ enum class Token
     VAR,
     WHILE,
     READ,
-    NAME,
     // fake token
     program,
     program_head,
