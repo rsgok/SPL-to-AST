@@ -22,7 +22,6 @@ class TreeNode
 public:
     string name;
     string content = "";
-    // Token token_name = Token::undefined;
     int row = 0;
     int col = 0;
     TreeNode *first_child;
@@ -32,9 +31,6 @@ public:
     TreeNode(string name, string content);
     TreeNode(string name, int num, ...);
     void write_json(string path);
-    // Token tokenResolver(string name);
-
-private:
     void traverse(TreeNode *node, ofstream &outfile);
 };
 

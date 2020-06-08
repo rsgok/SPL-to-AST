@@ -77,14 +77,26 @@ boolean (true)|(false)
 "char" {proc_content("SYS_TYPE", "char"); return SYS_TYPE;}
 "boolean" {proc_content("SYS_TYPE", "boolean"); return SYS_TYPE;}
 
+{real} { 
+  yylval.node = new TreeNode("REAL", yytext);
+	count_col();
+  return REAL; 
+}
 {integer} { 
 	yylval.node = new TreeNode("INTEGER", yytext);
 	count_col();
 	return INTEGER; 
 }
-{real} { return REAL; }
-{char} { return CHAR; }
-{string} { return STRING; }
+{char} { 
+  yylval.node = new TreeNode("CHAR", yytext);
+	count_col();
+  return CHAR; 
+}
+{string} { 
+  yylval.node = new TreeNode("STRING", yytext);
+	count_col();
+  return STRING; 
+}
 
 "read" { proc_content("READ", "read"); return READ; }
 
@@ -151,8 +163,6 @@ void count_col(){
       yycol++;
     }
   }
-
-  ECHO;
 }
 
 void count_row(){
